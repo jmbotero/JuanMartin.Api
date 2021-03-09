@@ -15,7 +15,7 @@ namespace JuanMartin.RestApiClient
     {
         public const string urlBase = "https://movie-database-imdb-alternative.p.rapidapi.com";
 
-        public string GetTitle(string title, string year="")
+        public string GetTitle(string title, string year = "")
         {
             var url = string.Format("{0}/?page=1&r=json&s={1}", urlBase, title.Replace(" ", "%20"));
             if (year != "")
@@ -26,11 +26,11 @@ namespace JuanMartin.RestApiClient
             request.AddHeader("x-rapidapi-host", "movie-database-imdb-alternative.p.rapidapi.com");
             request.AddHeader("x-rapidapi-key", "f439435b7dmshd45ea6ae205714ap14de2bjsnfe4d88c18881");
             IRestResponse response = client.Execute(request);
-            if (response!=null && response.StatusCode == HttpStatusCode.OK)
+            if (response != null && response.StatusCode == HttpStatusCode.OK)
             {
                 var json = JObject.Parse(response.Content);
 
-                if(json!=null)
+                if (json != null)
                 {
 
                     if (json["Search"] is JArray search)
@@ -45,10 +45,10 @@ namespace JuanMartin.RestApiClient
 
                             if (selectedTitle != null)
                                 if (selectedTitle.Value.ToString().ToUpper() == title.ToUpper())
-                                        break;
+                                    break;
                         }
                         if (selectedTitle != null)
-                        { 
+                        {
                             return properties?.FirstOrDefault(x => x.Name == "imdbID").Value.ToString() ?? HttpStatusCode.NotFound.ToString();
                         }
                     }
@@ -60,7 +60,7 @@ namespace JuanMartin.RestApiClient
         private Movie GetDetails(string id)
         {
             var m = new Movie();
-            
+
             var url = string.Format("{0}/?i={1}&r=json", urlBase, id);
 
             var client = new RestClient(url);
@@ -146,11 +146,11 @@ namespace JuanMartin.RestApiClient
         }
 
 
-    public Movie GetMovie(string title, string year="")
+        public Movie GetMovie(string title, string year = "")
         {
             Movie m = null;
 
-            var id = GetTitle(title,year);
+            var id = GetTitle(title, year);
 
             if (id != HttpStatusCode.NotFound.ToString())
             {
@@ -159,5 +159,5 @@ namespace JuanMartin.RestApiClient
 
             return m;
         }
-}
+    }
 }

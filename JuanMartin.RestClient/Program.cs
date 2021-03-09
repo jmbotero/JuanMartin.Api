@@ -1,10 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using JuanMartin.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using JuanMartin.RestApiClient.Entities;
-using System.Runtime.Serialization;
-using JuanMartin.Models;
 using System.IO;
+using System.Runtime.Serialization;
 
 namespace JuanMartin.RestApiClient
 {
@@ -14,7 +13,7 @@ namespace JuanMartin.RestApiClient
         {
             var key = Console.ReadKey();
 
-            switch(key.KeyChar)
+            switch (key.KeyChar)
             {
                 case 'E':
                     {
@@ -22,7 +21,7 @@ namespace JuanMartin.RestApiClient
                         {
                             var euler = new EulerApi();
                             var exam = File.ReadAllText(@"..\..\..\exam-sample.json");
-                            var r = euler.GetAnswers(JsonConvert.DeserializeObject<Exam>(exam));            
+                            var r = euler.GetAnswers(JsonConvert.DeserializeObject<Exam>(exam));
                             var json = JsonConvert.SerializeObject(r, Formatting.Indented);
                             Console.WriteLine(json);
                             break;
@@ -64,7 +63,7 @@ namespace JuanMartin.RestApiClient
                         var imdb = new ImdbApi();
                         var movie = imdb.GetMovie("Avengers Endgame");
                         var json = JsonConvert.SerializeObject(movie, Formatting.Indented);
-                        Console.WriteLine(json); 
+                        Console.WriteLine(json);
                         break;
                     }
                 default:

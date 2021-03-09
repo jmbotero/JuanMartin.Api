@@ -1,7 +1,7 @@
-﻿using RestSharp;
-using JuanMartin.Models;
-using System.Collections.Generic;
+﻿using JuanMartin.Models;
+using RestSharp;
 using RestSharp.Serialization.Json;
+using System.Collections.Generic;
 
 namespace JuanMartin.RestApiClient
 {
@@ -9,9 +9,9 @@ namespace JuanMartin.RestApiClient
     {
         public const string baseUrl = "http://localhost/JuanMartin.Api/api/problems";
 
-        public Result GetAnswer(string id,Dictionary<string,string> arguments)
+        public Result GetAnswer(string id, Dictionary<string, string> arguments)
         {
-            var client = new RestClient(string.Format("{0}/{1}",baseUrl,id));
+            var client = new RestClient(string.Format("{0}/{1}", baseUrl, id));
             var request = new RestRequest(Method.GET);
 
             request.AddQueryParameter("id", id);
@@ -19,8 +19,8 @@ namespace JuanMartin.RestApiClient
                 request.AddQueryParameter(arg.Key, arg.Value);
 
             request.AddHeader("accept", "application/json");
-            
-           IRestResponse response = client.Execute(request);
+
+            IRestResponse response = client.Execute(request);
 
             var deserial = new JsonDeserializer();
 
@@ -39,7 +39,7 @@ namespace JuanMartin.RestApiClient
 
             var deserial = new JsonDeserializer();
 
-            return deserial.Deserialize <IEnumerable<Result>>(response);
+            return deserial.Deserialize<IEnumerable<Result>>(response);
         }
 
     }
