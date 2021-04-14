@@ -11,6 +11,7 @@ namespace JuanMartin.RestApiClient
     {
         private static void Main()
         {
+            Console.WriteLine("Press letter for selection: (E) for json exam, (e) for euler problem 2, (m)  for Imbd movie.")
             var key = Console.ReadKey();
 
             switch (key.KeyChar)

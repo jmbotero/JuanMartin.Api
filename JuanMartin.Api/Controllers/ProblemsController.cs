@@ -7,7 +7,9 @@ using System.Web.Http;
 using JuanMartin.Api.Utilities;
 using System;
 using JuanMartin.Models;
-using Newtonsoft.Json;
+using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
+using FromBodyAttribute = Microsoft.AspNetCore.Mvc.FromBodyAttribute;
+using HttpGetAttribute = Microsoft.AspNetCore.Mvc.HttpGetAttribute;
 
 namespace JuanMartin.Api.Controllers
 {
