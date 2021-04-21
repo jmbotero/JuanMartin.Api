@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using JuanMartin.Api.Utilities;
+using JuanMartin.Models;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
-
-using JuanMartin.Api.Utilities;
-using System;
-using JuanMartin.Models;
-using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
-using FromBodyAttribute = Microsoft.AspNetCore.Mvc.FromBodyAttribute;
-using HttpGetAttribute = Microsoft.AspNetCore.Mvc.HttpGetAttribute;
+using HttpGetAttribute = System.Web.Mvc.HttpGetAttribute;
+using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
 
 namespace JuanMartin.Api.Controllers
 {
@@ -18,6 +16,7 @@ namespace JuanMartin.Api.Controllers
         // should be a GET, but to pass a request payload, so got to use a post
         [HttpPost]
         // POST: api/problems
+        [AcceptVerbs("POST")]
         public HttpResponseMessage GetAnswers([FromBody] Exam euler)
         {
 
@@ -94,6 +93,7 @@ namespace JuanMartin.Api.Controllers
 
         [HttpGet]
         // GET: api/problems/{id}?arguments
+        [AcceptVerbs("GET")]
         public HttpResponseMessage GetAnswer(int id)
         {
             if (!ModelState.IsValid)
@@ -180,5 +180,5 @@ namespace JuanMartin.Api.Controllers
             }
         }
 
-            }
+    }
 }

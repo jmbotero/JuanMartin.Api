@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuanMartin.Models", "..\JuanMartin.Models\JuanMartin.Models\JuanMartin.Models.csproj", "{6B59DE41-40F5-41C0-98CD-3393D463C757}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuanMartin.Utilities", "..\JuanMartin.Utilities\JuanMartin.Utilities\JuanMartin.Utilities.csproj", "{DDCBAA7C-5961-491F-8861-32003E400304}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuanMartin.Api", "JuanMartin.Api\JuanMartin.Api.csproj", "{648ADDCB-8B62-4E87-B0E0-59D6F63B8F8C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuanMartin.Kernel", "..\JuanMartin.Kernel\JuanMartin.Kernel\JuanMartin.Kernel.csproj", "{4515E3A1-F6B3-4AF5-AE75-BB9E214EC349}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuanMartin.Api", "JuanMartin.Api\JuanMartin.Api.csproj", "{4F8FFE7B-F866-46DC-A6A8-22AC730BB777}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuanMartin.Models", "..\JuanMartin.Models\JuanMartin.Models\JuanMartin.Models.csproj", "{6B59DE41-40F5-41C0-98CD-3393D463C757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuanMartin.Utilities", "..\JuanMartin.Utilities\JuanMartin.Utilities\JuanMartin.Utilities.csproj", "{DDCBAA7C-5961-491F-8861-32003E400304}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +17,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{648ADDCB-8B62-4E87-B0E0-59D6F63B8F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{648ADDCB-8B62-4E87-B0E0-59D6F63B8F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{648ADDCB-8B62-4E87-B0E0-59D6F63B8F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{648ADDCB-8B62-4E87-B0E0-59D6F63B8F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4515E3A1-F6B3-4AF5-AE75-BB9E214EC349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4515E3A1-F6B3-4AF5-AE75-BB9E214EC349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4515E3A1-F6B3-4AF5-AE75-BB9E214EC349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4515E3A1-F6B3-4AF5-AE75-BB9E214EC349}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B59DE41-40F5-41C0-98CD-3393D463C757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6B59DE41-40F5-41C0-98CD-3393D463C757}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B59DE41-40F5-41C0-98CD-3393D463C757}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -25,19 +33,11 @@ Global
 		{DDCBAA7C-5961-491F-8861-32003E400304}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDCBAA7C-5961-491F-8861-32003E400304}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDCBAA7C-5961-491F-8861-32003E400304}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4515E3A1-F6B3-4AF5-AE75-BB9E214EC349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4515E3A1-F6B3-4AF5-AE75-BB9E214EC349}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4515E3A1-F6B3-4AF5-AE75-BB9E214EC349}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4515E3A1-F6B3-4AF5-AE75-BB9E214EC349}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F8FFE7B-F866-46DC-A6A8-22AC730BB777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F8FFE7B-F866-46DC-A6A8-22AC730BB777}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F8FFE7B-F866-46DC-A6A8-22AC730BB777}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F8FFE7B-F866-46DC-A6A8-22AC730BB777}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {821C92AA-E5A1-4670-9DB9-89206D7F2957}
+		SolutionGuid = {34F9591E-6E8F-42CF-8454-5CC92F345589}
 	EndGlobalSection
 EndGlobal
