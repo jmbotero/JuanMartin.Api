@@ -11,8 +11,9 @@ namespace JuanMartin.RestApiClient
     {
         private static void Main()
         {
-            Console.WriteLine("Press letter for selection: (E) for json exam, (e) for euler problem 2, (m)  for Imbd movie.")
+            Console.WriteLine("Press letter for selection: (E) for json exam, (e) for euler problem 2, (m)  for Imbd movie.");
             var key = Console.ReadKey();
+            Console.WriteLine("");
 
             switch (key.KeyChar)
             {
@@ -20,8 +21,13 @@ namespace JuanMartin.RestApiClient
                     {
                         try
                         {
+                            Console.WriteLine("First  make sure JuanMartin.Api is running.");
+                            Console.WriteLine("<Press any key to continue...>");
+                            Console.ReadKey();
+
                             var euler = new EulerApi();
-                            var exam = File.ReadAllText(@"..\..\..\exam-sample.json");
+                            
+                            var exam = File.ReadAllText(@"..\..\exam-sample.json");
                             var r = euler.GetAnswers(JsonConvert.DeserializeObject<Exam>(exam));
                             var json = JsonConvert.SerializeObject(r, Formatting.Indented);
                             Console.WriteLine(json);
@@ -40,6 +46,10 @@ namespace JuanMartin.RestApiClient
                     }
                 case 'e':
                     {
+                        Console.WriteLine("First  make sure JuanMartin.Api is running.");
+                        Console.WriteLine("<Press any key to continue...>");
+                        Console.ReadKey();
+
                         try
                         {
                             var euler = new EulerApi();
@@ -50,17 +60,21 @@ namespace JuanMartin.RestApiClient
                         }
                         catch (SerializationException e)
                         {
-                            Console.WriteLine(e.Message);
+                            Console.WriteLine($"Serialization error: {e.Message}");
                             break;
                         }
                         catch (JsonException e)
                         {
-                            Console.WriteLine(e.Message);
+                            Console.WriteLine($"Error: {e.Message}");
                             break;
                         }
                     }
                 case 'm':
                     {
+                        Console.WriteLine("First  make sure IMDB Api is running.");
+                        Console.WriteLine("<Press any key to continue...>");
+                        Console.ReadKey();
+
                         var imdb = new ImdbApi();
                         var movie = imdb.GetMovie("Avengers Endgame");
                         var json = JsonConvert.SerializeObject(movie, Formatting.Indented);
@@ -72,6 +86,8 @@ namespace JuanMartin.RestApiClient
 
             }
 
+            Console.WriteLine("<Press any key to continue...>");
+            Console.ReadKey();
         }
     }
 }

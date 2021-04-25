@@ -105,7 +105,7 @@
       "variables": {
         "73ead9ea-f017-46bd-b3f5-e8d30a94ad52": {
           "name": "host",
-          "value": "http://localhost:44335",
+          "value": "https://localhost:44335",
           "enabled": true,
           "private": false,
           "createdAt": "2021-04-21T10:48:09.255-04:00"
