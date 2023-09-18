@@ -9,22 +9,27 @@ namespace JuanMartin.RestApiClient
 {
 
     /// <summary>
-    /// Class using api from https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative/details
+    /// Class using api from https://rapidapi.com/rapidapi/api/movie-database-alternative/  
+    /// var client = new RestClient("https://movie-database-alternative.p.rapidapi.com/?y=1998&r=json&i=tt4154796&type=movie");");
+    /// var request = new RestRequest(Method.GET);
+    /// request.AddHeader("X-RapidAPI-Key", "43e70c125emsh2f755ddda5a37ffp15fdd3jsn94d8227ec0ed");
+    /// request.AddHeader("X-RapidAPI-Host", "movie-database-alternative.p.rapidapi.com");
+    /// IRestResponse response = client.Execute(request);
     /// </summary>
     public class ImdbApi
     {
-        public const string urlBase = "https://movie-database-imdb-alternative.p.rapidapi.com";
+        public const string urlBase = "https://movie-database-alternative.p.rapidapi.com";
 
-        public string GetTitle(string title, string year="")
+        public string GetImdbId(string title, string year="")
         {
-            var url = string.Format("{0}/?page=1&r=json&s={1}", urlBase, title.Replace(" ", "%20"));
+            var url = string.Format("{0}/?s={1}&r=json", urlBase, title.Replace(" ", "%20"));
             if (year != "")
                 url += string.Format("&y={0}", year);
 
             var client = new RestClient(url);
             var request = new RestRequest(Method.GET);
-            request.AddHeader("x-rapidapi-host", "movie-database-imdb-alternative.p.rapidapi.com");
-            request.AddHeader("x-rapidapi-key", "f439435b7dmshd45ea6ae205714ap14de2bjsnfe4d88c18881");
+            request.AddHeader("X-RapidAPI-Key", "43e70c125emsh2f755ddda5a37ffp15fdd3jsn94d8227ec0ed");
+            request.AddHeader("X-RapidAPI-Host", "movie-database-alternative.p.rapidapi.com");
             IRestResponse response = client.Execute(request);
             if (response!=null && response.StatusCode == HttpStatusCode.OK)
             {
@@ -61,12 +66,12 @@ namespace JuanMartin.RestApiClient
         {
             var m = new Movie();
             
-            var url = string.Format("{0}/?i={1}&r=json", urlBase, id);
+            var url = string.Format("{0}/?i={1}&r=json&type=movie&plot=full", urlBase, id);
 
             var client = new RestClient(url);
             var request = new RestRequest(Method.GET);
-            request.AddHeader("x-rapidapi-host", "movie-database-imdb-alternative.p.rapidapi.com");
-            request.AddHeader("x-rapidapi-key", "f439435b7dmshd45ea6ae205714ap14de2bjsnfe4d88c18881");
+            request.AddHeader("X-RapidAPI-Key", "43e70c125emsh2f755ddda5a37ffp15fdd3jsn94d8227ec0ed");
+            request.AddHeader("X-RapidAPI-Host", "movie-database-alternative.p.rapidapi.com");
             IRestResponse response = client.Execute(request);
             if (response != null && response.StatusCode == HttpStatusCode.OK)
             {
@@ -150,7 +155,7 @@ namespace JuanMartin.RestApiClient
         {
             Movie m = null;
 
-            var id = GetTitle(title,year);
+            var id = GetImdbId(title,year);
 
             if (id != HttpStatusCode.NotFound.ToString())
             {

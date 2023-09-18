@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JuanMartin.Api</RootNamespace>
     <AssemblyName>JuanMartin.Api</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -195,9 +195,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\JuanMartin.Utilities\JuanMartin.Utilities\Utilities.csproj">
-      <Project>{7e98c079-4e82-4a3f-8bd1-0bb0efed02bf}</Project>
-      <Name>Utilities</Name>
+    <ProjectReference Include="..\..\JuanMartin.Utilities\JuanMartin.Utilities\JuanMartin.Utilities.csproj">
+      <Project>{ddcbaa7c-5961-491f-8861-32003e400304}</Project>
+      <Name>JuanMartin.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
